@@ -1,6 +1,6 @@
 import Home from "./Pages/Home"
-import Users from "./Pages/Users"
-import About from "./Pages/About"
+import Quotes from "./Pages/Quotes"
+
 import HomeLayout from "./Pages/HomeLayout"
 
 
@@ -18,17 +18,12 @@ const routes = [
 
             },
             {
-                name: "users",
-                path: "users",
-                element: <Users />
+                name: "quotes",
+                path: "quotes",
+                element: <Quotes />
 
             },
-            {
-                name: "about",
-                path: "about",
-                element: <About />
-
-            },
+    
 
 
         ]

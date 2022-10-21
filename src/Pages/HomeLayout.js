@@ -1,16 +1,24 @@
 import React from 'react'
 import { NavLink, Outlet } from "react-router-dom"
+
 const HomeLayout = () => {
     return (
 
         <>
-            <nav>
-                <NavLink to="/" end>Anasayfa</NavLink>
-                <NavLink to="/users" end>Users</NavLink>
-                <NavLink to="/about" end>About</NavLink>
+            <nav className='navbar'>
+                <h1>Breaking Bad App</h1>
+
+                <div>
+                    <NavLink className="link" to="/" end>Homepage</NavLink>
+                    <NavLink className="link" to="/quotes" end>Quotes</NavLink>
+
+                </div>
+
+
             </nav>
 
             <Outlet />
+            
         </>
 
 
