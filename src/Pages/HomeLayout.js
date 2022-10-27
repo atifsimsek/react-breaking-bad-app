@@ -7,7 +7,7 @@ const HomeLayout = () => {
             <nav className='navbar'>
                 <h1>Breaking Bad App</h1>
 
-                <div>
+                <div className='link-container'>
                     <NavLink className="link" to="/" end>Homepage</NavLink>
                     <NavLink className="link" to="/quotes" end>Quotes</NavLink>
 

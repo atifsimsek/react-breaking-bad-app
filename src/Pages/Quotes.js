@@ -1,17 +1,43 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchQuotes } from "../redux/quotesSlice"
+import Loading from "../Components/Loading"
+import Error from "../Components/Error"
+import {
+  fetchQuotes,
+  stateData,
+  stateError,
+  stateStatus,
+} from "../redux/quotesSlice"
+
+
 const Quotes = () => {
   const dispatch = useDispatch()
-  const data = useSelector(state => state.quotes.quotes)
-  console.log(data)
+  const data = useSelector(stateData)
+  const status = useSelector(stateStatus)
+  const error = useSelector(stateError)
+
+
 
 
   useEffect(() => {
-    dispatch(fetchQuotes())
+    if (status === "idle") {
+      dispatch(fetchQuotes())
+    }
 
 
-  }, [dispatch])
+
+  }, [dispatch, status])
+
+  if (status === "loading") {
+    return (<Loading />)
+  }
+
+
+  if (status === "failed") {
+    return (<Error message={error} />)
+  }
+
+
   return (
     <div className='container'>
       {

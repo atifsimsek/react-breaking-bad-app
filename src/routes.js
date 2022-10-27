@@ -1,6 +1,6 @@
 import Home from "./Pages/Home"
 import Quotes from "./Pages/Quotes"
-
+import CharacterDetail from "./Pages/CharacterDetail"
 import HomeLayout from "./Pages/HomeLayout"
 
 
@@ -23,7 +23,12 @@ const routes = [
                 element: <Quotes />
 
             },
-    
+            {
+                name: "character-detail",
+                path: "character/:id",
+                element: <CharacterDetail />
+            }
+
 
 
         ]

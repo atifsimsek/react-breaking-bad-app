@@ -1,19 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchCharacters } from "../redux/charactersSlice"
 import { BsArrowDownSquare } from "react-icons/bs"
 import GoToTop from '../Components/GoToTop'
 import Loading from '../Components/Loading'
+import Error from '../Components/Error'
+import { NavLink } from 'react-router-dom'
+import {
+  fetchCharacters,
+  stateData,
+  stateError,
+  stateHasNextPage,
+  stateIsLoading,
+  statePage,
+  stateStatus
+} from "../redux/charactersSlice"
+
+
 
 const Home = () => {
   const dispatch = useDispatch()
-  const data = useSelector(state => state.characters.items)
-  const page = useSelector(state => state.characters.page)
-  const status = useSelector(state => state.characters.status)
-  const hasNextPage = useSelector(state => state.characters.hasNextPage)
-  const isLoading = useSelector(state => state.characters.isLoading)
-
-  const [a, setA] = useState(true)
+  const data = useSelector(stateData)
+  const page = useSelector(statePage)
+  const status = useSelector(stateStatus)
+  const hasNextPage = useSelector(stateHasNextPage)
+  const isLoading = useSelector(stateIsLoading)
+  const error = useSelector(stateError)
 
 
 
@@ -24,46 +35,49 @@ const Home = () => {
 
     }
 
-    return () => setA(false)
+
 
   }, [dispatch, status])
 
 
 
-
-  if (a) {
+  if (isLoading) {
     return (<Loading />)
+  }
 
-
+  if (status === "failed") {
+    return (<Error message={error} />)
   }
 
 
 
 
 
+
   return (
-    <>
+    <div className='container'>
+      {
 
-      <div className='container'>
-        {
-
-          data.map(character => (
-            <div key={character.char_id} className='character-box'>
-              <img src={character.img} alt="" />
-              <div className="overlay"></div>
-              <div className='name-box'>
-                <h4>{character.name}</h4>
-                <h5>{character.nickname}</h5>
-              </div>
+        data.map(character => (
+          <NavLink to={`/character/${character.char_id}`} key={character.char_id} className='character-box'>
+            <img src={character.img} alt="" />
+            <div className="overlay"></div>
+            <div className='name-box'>
+              <h4>{character.name}</h4>
+              <h5>{character.nickname}</h5>
             </div>
-          ))
-        }
+          </NavLink>
+        ))
+      }
 
 
-        <div className="page-box">
+      {isLoading
+        ? null
+        : <div className="page-box">
 
-          {isLoading && <div className='load-small'><Loading /></div>}
+          {status === "loading" && <div className="lds-dual-ring"></div>}
 
+          {status === "failed" && <Error message={error} ></Error>}
 
           <span>{
             hasNextPage ? `Page: ${page}` : "No more pages to show"
@@ -75,13 +89,11 @@ const Home = () => {
 
           }
 
+        </div>}
+
+    </div>
 
 
-        </div>
-
-      </div>
-
-    </>
   )
 }
 
