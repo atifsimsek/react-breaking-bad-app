@@ -8,8 +8,8 @@ const HomeLayout = () => {
                 <h1>Breaking Bad App</h1>
 
                 <div className='link-container'>
-                    <NavLink className="link" to="/" end>Homepage</NavLink>
-                    <NavLink className="link" to="/quotes" end>Quotes</NavLink>
+                    <NavLink className="link" to="/react-breaking-bad-app/" end>Homepage</NavLink>
+                    <NavLink className="link" to="/react-breaking-bad-app/quotes" end>Quotes</NavLink>
 
                 </div>
 

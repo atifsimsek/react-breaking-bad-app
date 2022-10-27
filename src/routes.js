@@ -8,7 +8,7 @@ import HomeLayout from "./Pages/HomeLayout"
 const routes = [
     {
         name: "home",
-        path: "/",
+        path: "/react-breaking-bad-app/",
         element: <HomeLayout />,
         children: [
             {

@@ -59,7 +59,7 @@ const Home = () => {
       {
 
         data.map(character => (
-          <NavLink to={`/character/${character.char_id}`} key={character.char_id} className='character-box'>
+          <NavLink to={`/react-breaking-bad-app/character/${character.char_id}`} key={character.char_id} className='character-box'>
             <img src={character.img} alt="" />
             <div className="overlay"></div>
             <div className='name-box'>
