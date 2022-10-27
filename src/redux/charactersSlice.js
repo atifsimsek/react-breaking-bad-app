@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
 
-const char = 12
+let char = 12
 let removeSkyler = 13
 export const fetchCharacters = createAsyncThunk("/characters/getCharacters", async (page) => {
     const res = await axios(`${process.env.REACT_APP_API_BASE_ENDPOINT}/characters?limit=${removeSkyler}&offset=${page * char}`)
@@ -37,6 +37,8 @@ const charactersSlice = createSlice({
         [fetchCharacters.fulfilled]: (state, action) => {
 
             if (removeSkyler === 13) { removeSkyler = removeSkyler - 1 }
+            if (char === 12) { char = char + 1 }
+            
             state.status = "succeeded"
             state.isLoading = false;
             const filtredCharacters = action.payload.filter(character => character.name !== "Skyler White")

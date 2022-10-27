@@ -30,7 +30,6 @@ const detailSlice = createSlice({
 
         [fetchCharacter.fulfilled]: (state, action) => {
             state.status = "succeeded"
-            console.log(action.payload)
             state.character = action.payload
         },
         [fetchCharacter.rejected]: (state, action) => {
