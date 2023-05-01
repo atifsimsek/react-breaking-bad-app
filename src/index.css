@@ -7,15 +7,15 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -23,26 +23,25 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(180deg,
-      hsl(175deg 68% 11%) 0%,
-      hsl(173deg 93% 11%) 11%,
-      hsl(170deg 100% 12%) 22%,
-      hsl(166deg 100% 13%) 33%,
-      hsl(162deg 100% 14%) 44%,
-      hsl(158deg 100% 15%) 56%,
-      hsl(154deg 100% 16%) 67%,
-      hsl(148deg 89% 18%) 78%,
-      hsl(136deg 66% 22%) 89%,
-      hsl(122deg 51% 25%) 100%);
+  background-image: linear-gradient(
+    180deg,
+    hsl(175deg 68% 11%) 0%,
+    hsl(173deg 93% 11%) 11%,
+    hsl(170deg 100% 12%) 22%,
+    hsl(166deg 100% 13%) 33%,
+    hsl(162deg 100% 14%) 44%,
+    hsl(158deg 100% 15%) 56%,
+    hsl(154deg 100% 16%) 67%,
+    hsl(148deg 89% 18%) 78%,
+    hsl(136deg 66% 22%) 89%,
+    hsl(122deg 51% 25%) 100%
+  );
   overflow: hidden;
-
 }
-
 
 .root {
   width: 100%;
   display: flex;
-
 }
 
 /* ********Navbar Start******** */
@@ -57,8 +56,8 @@ body {
   position: sticky;
   z-index: 3;
   top: 0;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
 .navbar .link {
@@ -66,7 +65,6 @@ body {
   font-size: 16px;
   margin-right: 2rem;
   padding: 0.47rem 0.7rem;
-
 }
 
 .navbar .active {
@@ -77,14 +75,9 @@ body {
   border-radius: 2px;
 }
 
-
-
-
 .navbar h1 {
-
   color: #fff;
   margin-left: 3rem;
-
 }
 
 /* ********Navbar End******** */
@@ -102,7 +95,6 @@ body {
   max-height: 100vh;
   padding: 2rem 0rem 4rem 0;
   overflow: scroll;
-
 }
 
 .container::-webkit-scrollbar-thumb {
@@ -110,20 +102,15 @@ body {
   border: 4px solid transparent;
   border-radius: 10px;
   background-clip: padding-box;
-
 }
 
 .container::-webkit-scrollbar {
   width: 16px;
-
-
 }
 
 /* ********Character Box Start******** */
 
-
 .container .character-box {
-
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
@@ -131,11 +118,9 @@ body {
   height: 400px;
   position: relative;
   margin: 0.5rem;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-
-
-
-
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .character-box .overlay {
@@ -148,7 +133,6 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.7), #524e4e70);
   opacity: 0;
   transition: 1s;
-
 }
 
 .overlay:hover {
@@ -158,7 +142,6 @@ body {
 .character-box img {
   width: 100%;
   height: 100%;
-
 }
 
 .character-box .name-box {
@@ -172,18 +155,15 @@ body {
   transform: translatey(-105%);
   opacity: 0;
   transition: 1s;
-
-
 }
 
-.character-box .name-box>* {
+.character-box .name-box > * {
   margin-bottom: 0.5rem;
 }
 
 .character-box:hover .name-box {
   opacity: 1;
   bottom: 0%;
-
 }
 
 /* ********Character Box End******** */
@@ -198,11 +178,11 @@ body {
   justify-content: center;
 }
 
-.page-box>* {
+.page-box > * {
   margin-bottom: 15px;
 }
 
-.page-box>span {
+.page-box > span {
   font-weight: bold;
   color: #fff;
 }
@@ -221,7 +201,6 @@ body {
 
 .page-box button svg {
   margin-left: 0.5rem;
-
 }
 
 /* ********Page Box End******** */
@@ -241,7 +220,9 @@ body {
   justify-content: center;
   padding: 2rem;
   color: #fff;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   text-align: center;
 }
 
@@ -304,7 +285,6 @@ body {
   margin-top: 3rem;
 }
 
-
 /* ********Error End******** */
 
 /* ********Character Detail Start******** */
@@ -316,13 +296,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
 }
 
 .character-container img {
   width: 370px;
   height: 490px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .character-container .detail {
@@ -334,7 +315,9 @@ body {
   flex-direction: column;
 
   justify-content: space-evenly;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   font-size: 17px;
 }
 
@@ -344,7 +327,6 @@ body {
   height: 2px;
   width: 100%;
   margin-bottom: 10px;
-
 }
 
 .detail h3,
@@ -353,17 +335,13 @@ h4 {
 }
 
 .detail p span {
-
   font-weight: bold;
 }
 
 /* ********Character Detail End******** */
 
-
-
 /* ********Tablet Css Start******** */
 @media (max-width: 1024px) {
-
   .navbar {
     height: 80px;
     font-size: 14px;
@@ -376,7 +354,6 @@ h4 {
     font-size: 20px;
     color: #fff;
     margin: 10px 15px 10px 0 !important;
-
   }
 
   .navbar .link-container {
@@ -403,10 +380,8 @@ h4 {
   }
 
   .container .character-box {
-
     width: 280px;
     height: 400px;
-
   }
 
   .character-container {
@@ -417,7 +392,7 @@ h4 {
     overflow-x: scroll;
     padding-top: 2rem;
   }
-  
+
   .character-container img {
     width: 400px;
     height: 550px;
@@ -431,9 +406,6 @@ h4 {
     font-size: 168x;
     padding: 1rem 1.8rem;
   }
-
-
-
 }
 
 /* ********Tablet Css End******** */
@@ -441,7 +413,6 @@ h4 {
 /* ********Mobile Css Start******** */
 
 @media (max-width: 480px) {
-
   .navbar {
     height: 70px;
     flex-direction: column;
@@ -449,15 +420,12 @@ h4 {
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0 1rem 0;
-
-
   }
 
   .navbar h1 {
     font-size: 18px;
     color: #fff;
     margin: 0 15px 10px 0 !important;
-
   }
 
   .navbar .link-container {
@@ -483,10 +451,8 @@ h4 {
   }
 
   .container .character-box {
-
     width: 280px;
     height: 400px;
-
   }
 
   .character-container {
@@ -509,9 +475,6 @@ h4 {
     font-size: 14px;
     padding: 0.7rem 1.2rem;
   }
-
-
-
 }
 
 /* ********Mobile Css End******** */

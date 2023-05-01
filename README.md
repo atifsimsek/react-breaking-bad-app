@@ -4,7 +4,6 @@
 
 In this project, I updated the sample project on the [patika.dev](https://www.patika.dev/tr) site by adding something from what I learned.
 
-
 ## Project Images
 
 ![image](src/img/img-1.png)
